@@ -4,15 +4,19 @@ using System.Collections;
 using SimpleJSON;
 using UnityEngine;
 
-public class CompressedImagePublisher : ROSBridgePublisher {
+public class CompressedImagePublisher : ROSBridgePublisher
+{
 
-	public static string GetMessageTopic(){
-		return "/image/compressed";
-	}
-	public static string GetMessageType(){
-		return "sensor_msgs/CompressedImage";
-	}
-	public static string ToYAMLString(CompressedImageMsg msg){
-		return msg.ToYAMLString ();
-	}
+    public new static string GetMessageTopic()
+    {
+        return "/image/compressed";
+    }
+    public new static string GetMessageType()
+    {
+        return "sensor_msgs/CompressedImage";
+    }
+    public static string ToYAMLString(CompressedImageMsg msg)
+    {
+        return msg.ToYAMLString();
+    }
 }

@@ -23,12 +23,12 @@ public class AUV : MonoBehaviour {
 	
     void Start(){
         ros = new ROSBridgeWebSocketConnection ("ws://192.168.0.100", 9090);
-        ros.AddPublisher (typeof(CompressedImagePublisher));
-        ros.AddPublisher(typeof(DepthPublisher));
+        //ros.AddPublisher (typeof(CompressedImagePublisher));
+        //ros.AddPublisher(typeof(DepthPublisher));
         // ros.AddPublisher(typeof(imuPublisher));
-        ros.AddPublisher(typeof(HeadingPublisher));
-        ros.AddSubscriber(typeof(ThrusterCallback));		
-        ros.AddSubscriber(typeof(ImuSubscriberCallback));
+        //ros.AddPublisher(typeof(HeadingPublisher));
+        //ros.AddSubscriber(typeof(ThrusterCallback));		
+        //ros.AddSubscriber(typeof(ImuSubscriberCallback));
         ros.Connect ();
         count = 0;
         lastFrame = DateTime.Now;
@@ -39,7 +39,7 @@ public class AUV : MonoBehaviour {
 
   void Update()
   {
-        // StartCoroutine(SendImage());
+        //StartCoroutine(SendImage());
         // StartCoroutine(SendDepth());
         // StartCoroutine(SendImu());
         // StartCoroutine(SendHeading());

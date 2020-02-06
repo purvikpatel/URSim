@@ -15,14 +15,18 @@ public class keyboardMove : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		float moveHorizontal = Input.GetAxis ("Horizontal");
-		float moveHorizontal2 = Input.GetAxis ("Horizontalmove");
-        float moveVertical = Input.GetAxis ("Vertical");
-        float yaw = Input.GetAxis ("MouseY");
+		float sway = Input.GetAxis ("sway");
+		float heave = Input.GetAxis ("heave");
+        float surge = Input.GetAxis ("surge");
+        float yaw = Input.GetAxis ("yaw");
+        float roll = Input.GetAxis("roll");
+        float pitch = Input.GetAxis("pitch");
 
-		Vector3 movement = new Vector3 (moveHorizontal, moveHorizontal2, moveVertical);
+		Vector3 movement = new Vector3 (sway, heave, surge);
         rb.AddForce (movement * 2500f);
 		rb.AddTorque(transform.up * 500 * yaw);
+        rb.AddTorque(transform.right * 500 * roll);
+        rb.AddTorque(transform.forward * 500 * pitch);
 	}
 	
 	// Update is called once per frame
